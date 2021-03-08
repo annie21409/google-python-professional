@@ -1,0 +1,73 @@
+First, import all the Python modules that you'll use in 
+this Python script. After importing the necessary 
+modules, initialize two dictionaries: one for the 
+number of different error messages and another to 
+count the number of entries for each user (splitting 
+between INFO and ERROR).
+
+Now, parse through each log entry in the syslog.log 
+file by iterating over the file.
+
+For each log entry, you'll have to first check if it 
+matches the INFO or ERROR message formats. 
+You should use regular expressions for this. 
+When you get a successful match, add one to the 
+corresponding value in the per_user dictionary. 
+If you get an ERROR message, add one to the 
+corresponding entry in the error dictionary by using 
+proper data structure.
+
+After you've processed the log entries from the 
+syslog.log file, you need to sort both the per_user 
+and error dictionary before creating CSV report files.
+
+Keep in mind that:
+
+The error dictionary should be sorted by the number of 
+errors from most common to least common.
+The user dictionary should be sorted by username.
+Insert column names as ("Error", "Count") at the zero 
+index position of the sorted error dictionary. 
+And insert column names as ("Username", "INFO", "ERROR")
+at the zero index position of the sorted per_user 
+dictionary.
+
+After sorting these dictionaries, store them in two 
+different files: error_message.csv and 
+user_statistics.csv.
+
+Save the ticky_check.py file by clicking Ctrl-o, 
+Enter key, and Ctrl-x.
+
+error_messages.csv:
+Error,Count,
+Ticket doesn't exist,7,
+Closed ticket, 12,
+...
+
+user_statistics.csv:
+Username,INFO,ERROR,
+rr.robinson, 1,2,
+...
+
+to do:
+1. create error_dict:
+    a. for each log - DONE
+    b. check if error or INFO - DONE
+    c. if error - DONE
+    d. get error message - DONE
+    if its not in error_dict
+    e. add in dict - DONE
+    if it is:
+    f. count up - DONE
+
+    ...return error_dict
+    {
+        "error message":4,
+    }
+2. write to csv
+
+1. change format of the dict - YES
+2. sort the dictionaries
+3. each colum need header 
+4. store them as csv - DONE
